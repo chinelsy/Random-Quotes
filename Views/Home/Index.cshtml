@@ -1,0 +1,19 @@
+﻿@model RandomQuotes.Models.GenerateQuotes
+@{
+    ViewData["Title"] = "Home Page";
+    var Quotes = Model;
+    var currentQuote = MyQuotes.GetRandomQuotes();    
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <div>
+        @currentQuote.Author
+        <br />
+        <span>@currentQuote.Quote</span>
+        
+    </div>
+</div>
+ 
