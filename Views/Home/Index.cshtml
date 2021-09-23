@@ -1,19 +1,41 @@
 ﻿@model RandomQuotes.Models.GenerateQuotes
 @{
+   
     ViewData["Title"] = "Home Page";
     var Quotes = Model;
-    var currentQuote = MyQuotes.GetRandomQuotes();    
+    var currentQuote = MyQuotes.GetRandomQuotes();
 
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <title>RANDOM-QUOTES</title>
+</head>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <div>
-        @currentQuote.Author
-        <br />
-        <span>@currentQuote.Quote</span>
-        
-    </div>
-</div>
- 
+<body style="background-color:green">
+    <div class="text-center">
+        <h1 style="color:white; font-size:larger">Welcome To The Game</h1>
+        <p style="color:maroon; font-size:medium"><strong>Keep refereshing to keep generating some random quotes!!!</strong></p>
+        <div>
+            <h4 style="color:orangered">
+                AUTHOR:
+                <br />
+                <span style="color:white"> @currentQuote.Author</span>
+            </h4>
+            <br />
+            <h3 style="color: orangered; font-size: larger">QUOTES:<br /><span style="color:white">@currentQuote.Quote</span></h3>
+        </div>   
+        <div>
+            <form asp-action="Index" >
+                <div>
+                    <button type="submit" class="btn btn-success">Refresh Quotes</button>
+                </div>
+            </form>
+        </div></div>
+
+</body>
+</html>
+
+

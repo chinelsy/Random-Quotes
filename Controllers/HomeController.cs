@@ -1,20 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
 using RandomQuotes.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace RandomQuotes.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly object Storequotes;
+
         public ViewResult Index()
         {
-            //var quote = new GenerateQuotes().GetRandomQuotes();
             return View();
+        }
+
+        public IActionResult Privacy() 
+        {
+            return View("Index");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
